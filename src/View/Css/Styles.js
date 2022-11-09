@@ -229,3 +229,78 @@ export const Main = StyleSheet.create({
     }
 
 });
+
+const borderDevStyle = '#f0f6fc1a';
+
+export const devStyles = StyleSheet.create({
+    scrollView: {
+        marginTop: 100,
+        width: '100%',
+    },
+    container: {
+        marginTop: 20,
+        marginBottom: 20,
+        width: '80%',
+        backgroundColor: '#161b22',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+        elevation: 24,
+        borderRadius: 33,
+    },
+    topContainer: {
+        paddingBottom: 10, paddingTop: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+    },
+    image: {
+        width: 65,
+        height: 65,
+        borderColor: borderDevStyle, borderWidth: 2,
+        borderRadius: 100,
+    },
+    emoji: {
+        position: 'absolute',
+        backgroundColor: '#0d1117',
+        borderRadius: 100,
+        width: 15,
+        height: 15,
+        right: 2,
+        bottom: 2,
+    },
+    title: {
+        color: '#c9d1d9',
+        fontSize: 24,
+        maxWidth: 259,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontFamily: 'Inter_700Bold',
+    },
+    text: {
+        color: '#8b949e',
+        maxWidth: 286,
+        textAlign: 'center',
+        fontSize: 20,
+        fontFamily: 'Inter_400Regular',
+    },
+    buttonContainer: {
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: 10, marginTop: 5,
+    },
+    button: {
+        backgroundColor: '#21262d',
+        width: '50%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 30,
+        borderRadius: 6,
+        borderColor: borderDevStyle,
+        borderWidth: 2,
+    }
+});

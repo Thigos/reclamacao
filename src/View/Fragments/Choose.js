@@ -25,7 +25,7 @@ export default function App({ setState }) {
         </TouchableOpacity>
 
         <TouchableOpacity style={[Global.button, Choose.button]} 
-            onPress={console.log('sobre')}>
+            onPress={() => setState('about')}>
                 <Ionicons name="information-circle" size={48} color="white" />
                 <Text style={Global.button.text}>Sobre o Sistema</Text>
         </TouchableOpacity>
