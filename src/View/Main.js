@@ -92,7 +92,7 @@ export default function App({ navigation }) {
           <Text style={Global.label}>Laboratório</Text>
           <View style={Main.pickerContainer}>
             <Picker
-              selectedValue={lab}
+              selectedValue={lab => setLab(lab)}
               style={Main.pickerContainer.picker}
               onValueChange={(itemValue, itemIndex) =>
                 setLab(itemValue)
@@ -109,7 +109,7 @@ export default function App({ navigation }) {
 
           <Text style={Global.label}>Computador</Text>
           <TextInput style={[Global.input]}
-            onChangeText={computador => setComputador(nome)}
+            onChangeText={computador => setComputador(computador)}
             defaultValue={''} />
 
           <Text style={Global.label}>Titulo Do Pedido</Text>
@@ -140,7 +140,7 @@ export default function App({ navigation }) {
 
   function reclamar() {
     // POST API
-    var InsertAPIURL = "http://10.0.2.2:80/SignIn/SignUp.php";   //API to render signup
+    var InsertAPIURL = "http://192.168.0.105:8000/cadastro";   //API to render signup
 
     var headers = {
       'Accept': 'application/json',
@@ -148,10 +148,15 @@ export default function App({ navigation }) {
     };
 
     var data = {
-      "nome": nome,
       "periodo": periodo,
       "turma": turma,
-      "curso": curso
+      "curso": curso,
+      "computador": computador,
+      "lab": lab,
+      "titulo": titulo,
+      "descPedido": descricao,
+      "nomeProf": (state === 'professor' ? nome : ""),
+      "nomeAluno": (state === 'aluno' ? nome : "")
     }
 
     // FETCH func 
@@ -162,9 +167,9 @@ export default function App({ navigation }) {
     })
       .then((response) => response.json())
       .then((response) => {
-        let message = response[0].message
-        console.log(message);
-        if (message === "OK") {
+        let message = response[0]
+        console.log(message, response);
+        if (message === "ok") {
           // NAVIGATE TO FINALLY
           navigation.navigate('Finally');
         }
