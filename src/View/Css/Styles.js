@@ -110,7 +110,6 @@ export const Global =  StyleSheet.create({
 
     label: {
         color: fontColor,
-        fontFamily: 'consolas',
         fontWeight: 'bold',
         fontSize: 20,
         marginTop: 10,
