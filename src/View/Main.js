@@ -92,7 +92,7 @@ export default function App({ navigation }) {
           <Text style={Global.label}>Laboratório</Text>
           <View style={Main.pickerContainer}>
             <Picker
-              selectedValue={lab => setLab(lab)}
+              selectedValue={lab}
               style={Main.pickerContainer.picker}
               onValueChange={(itemValue, itemIndex) =>
                 setLab(itemValue)
@@ -140,7 +140,7 @@ export default function App({ navigation }) {
 
   function reclamar() {
     // POST API
-    var InsertAPIURL = "http://192.168.0.105:8000/cadastro";   //API to render signup
+    var InsertAPIURL = "http://192.168.0.108/cadastro";   //API to render signup
 
     var headers = {
       'Accept': 'application/json',
@@ -169,10 +169,9 @@ export default function App({ navigation }) {
       .then((response) => {
         let message = response[0]
         console.log(message, response);
-        if (message === "ok") {
-          // NAVIGATE TO FINALLY
+                  // NAVIGATE TO FINALLY
           navigation.navigate('Finally');
-        }
+        
 
       })
       .catch((error) => {
