@@ -225,6 +225,7 @@ export const Main = StyleSheet.create({
         height: 150,
         textDecorationColor: fontColor,
         textAlignVertical: 'top',
+        maxWidth:width-100,
 
     }
 
